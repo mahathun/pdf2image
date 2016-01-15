@@ -9,7 +9,7 @@ multer = require('multer')
 converter = require('./lib/converter')
 
 basic = auth.basic({realm: "Convert"}, (u, p, cb) ->
-	cb(u == 'nixon' && p == '@#$jfiehd1')
+	cb(u == 'pagearranger' && p == 'Csd{xC]y2QM,e}=m')
 )
 
 app = express()

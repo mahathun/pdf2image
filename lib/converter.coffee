@@ -15,8 +15,8 @@ convertSettings =
 		'args': '-density 600'
 	'pdf:png-thumb':
 		'input': 'pdf'
-		'output': 'png'
-		'args': '-depth 4 -resize 173 -quality 80 -strip'
+		'output': 'jpg'
+		'args': '-depth 4 -resize 320 -quality 80 -strip -trim'
 
 
 getConvertSettings = (req) ->
@@ -40,7 +40,7 @@ exports.convert = (req, res) ->
 
 	res.type(settings.output)
 
-	cmd = "convert #{settings.input}:#{upload.path} -trim #{settings.args} #{settings.output}:-"
+	cmd = "convert #{settings.input}:#{upload.path} #{settings.args} #{settings.output}:-"
 
 	exec(cmd, execSettings, (error, stdout, stderr) ->
 			res.send(new Buffer(stdout, 'binary'))

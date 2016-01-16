@@ -40,10 +40,11 @@ exports.convert = (req, res) ->
 
 	res.type(settings.output)
 
-	console.log "hello world"
-	exec("convert -version") -> console.log
-	cmd = "convert #{settings.input}:#{upload.path} -trim #{settings.args} #{settings.output}:-"
 
-	exec(cmd, execSettings, (error, stdout, stderr) ->
-			res.send(new Buffer(stdout, 'binary'))
+	exec("convert -version") -> res.send(new Buffer(stdout, 'binary'))
+
+//	cmd = "convert #{settings.input}:#{upload.path} -trim #{settings.args} #{settings.output}:-"
+
+//	exec(cmd, execSettings, (error, stdout, stderr) ->
+//			res.send(new Buffer(stdout, 'binary'))
 	)

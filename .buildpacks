@@ -1,4 +1,5 @@
 https://github.com/heroku/heroku-buildpack-nodejs
+https://github.com/elbongurk/heroku-buildpack-ghostscript.git
 https://github.com/bradedelman/heroku-buildpack-imagemagick.git
 
 

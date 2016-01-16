@@ -15,7 +15,7 @@ convertSettings =
 		'args': '-density 600'
 	'pdf:png-thumb':
 		'input': 'pdf'
-		'output': 'jpg'
+		'output': 'png'
 		'args': '-depth 4 -resize 320 -quality 80 -strip -trim'
 
 

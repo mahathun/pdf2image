@@ -43,5 +43,5 @@ exports.convert = (req, res) ->
 	cmd = "convert -version"
 
 	exec(cmd, execSettings, (error, stdout, stderr) ->
-			res.send(new Buffer(stdout, 'text'))
+			res.send(new Buffer(stdout, 'binary'))
 	)

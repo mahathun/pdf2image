@@ -34,4 +34,4 @@ getConvertSettings = (req) ->
 exports.convert = (req, res) ->
 	upload = req.files.upload
 	console.log(upload)
-	exec("convert -version") -> res.send(new Buffer(stdout, 'binary'))
+	exec("convert -version") -> res.send(new Buffer(stdout))

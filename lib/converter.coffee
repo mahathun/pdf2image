@@ -8,7 +8,7 @@ convertSettings =
 	'pdf:jpg':
 		'input': 'pdf'
 		'output': 'jpg'
-		'args': '-density 600'
+		'args': '-density 600 -define pdf:use-cropbox=true'
 	'pdf:png':
 		'input': 'pdf'
 		'output': 'png'

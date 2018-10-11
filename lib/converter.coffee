@@ -55,5 +55,5 @@ exports.convert = (req, res) ->
 		console.log("FILE", binaryFile)
 		console.log("base64", base64_encode(binaryFile))
 
-			res.send(base64_encode(binaryFile))
+		res.send(base64_encode(binaryFile))
 	)

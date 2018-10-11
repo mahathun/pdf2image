@@ -1,5 +1,5 @@
 exec = require('child_process').exec
-var fs = require('fs');
+fs = require('fs');
 
 execSettings = {encoding: 'binary', maxBuffer: 100000*1024}
 

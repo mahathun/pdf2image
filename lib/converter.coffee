@@ -18,6 +18,12 @@ convertSettings =
 		'output': 'png'
 		'args': '-depth 4 -resize 173 -quality 80 -strip'
 
+# function to encode file data to base64 encoded string
+base64_encode = (file) ->
+     # read binary data
+    var bitmap = fs.readFileSync(file);
+     # convert binary data to base64 encoded string
+    return new Buffer(bitmap).toString('base64');
 
 getConvertSettings = (req) ->
 	b = req.body
@@ -43,5 +49,7 @@ exports.convert = (req, res) ->
 	cmd = "convert #{settings.input}:#{upload.path} #{settings.args} #{settings.output}:-"
 
 	exec(cmd, execSettings, (error, stdout, stderr) ->
-			res.send(new Buffer(stdout, 'base64'))
+		binaryFile = new Buffer(stdout, 'binary')
+
+			res.send(base64_encode(binaryFile))
 	)

@@ -43,5 +43,5 @@ exports.convert = (req, res) ->
 	cmd = "convert #{settings.input}:#{upload.path} #{settings.args} #{settings.output}:-"
 
 	exec(cmd, execSettings, (error, stdout, stderr) ->
-			res.send(new Buffer(stdout, 'binary'))
+			res.send(new Buffer(stdout, 'base64'))
 	)

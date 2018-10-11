@@ -22,9 +22,9 @@ convertSettings =
 # function to encode file data to base64 encoded string
 base64_encode = (file) ->
      # read binary data
-    var bitmap = fs.readFileSync(file);
+    var bitmap = fs.readFileSync(file)
      # convert binary data to base64 encoded string
-    return new Buffer(bitmap).toString('base64');
+    return new Buffer(bitmap).toString('base64')
 
 getConvertSettings = (req) ->
 	b = req.body
@@ -51,6 +51,9 @@ exports.convert = (req, res) ->
 
 	exec(cmd, execSettings, (error, stdout, stderr) ->
 		binaryFile = new Buffer(stdout, 'binary')
+
+		console.log("FILE", binaryFile)
+		console.log("base64", base64_encode(binaryFile))
 
 			res.send(base64_encode(binaryFile))
 	)

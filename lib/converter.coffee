@@ -53,7 +53,8 @@ exports.convert = (req, res) ->
 		binaryFile = new Buffer(stdout, 'binary')
 
 		console.log("FILE", binaryFile)
-		console.log("base64", base64_encode(binaryFile))
+		console.log("FILE base64", binaryFile.toString('base64'))
+		# console.log("base64", base64_encode(binaryFile))
 
 		res.send(binaryFile)
 	)

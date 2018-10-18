@@ -3,7 +3,7 @@ fs = require('fs')
 
 execSettings = {encoding: 'binary', maxBuffer: 100000*1024}
 
-defaultConvert = 'pdf:png'
+defaultConvert = 'pdf:jpg'
 
 convertSettings =
 	'pdf:jpg':

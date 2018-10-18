@@ -5,6 +5,7 @@ serveStatic = require('serve-static')
 auth = require('http-auth')
 bodyParser = require('body-parser')
 multer = require('multer')
+cors = require('cors')
 
 converter = require('./lib/converter')
 
@@ -13,6 +14,7 @@ basic = auth.basic({realm: "Convert"}, (u, p, cb) ->
 )
 
 app = express()
+	.use(cors())
 	.use(morgan('combined'))
 	.use(favicon(__dirname + '/public/favicon.ico'))
 	.use(bodyParser.json())
